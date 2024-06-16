@@ -3,6 +3,8 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/chat/chats.css' %}">
+<link rel="stylesheet" href="{% static 'css/darktheme.css' %}" id="dark-theme-stylesheet" disabled>
+
 
 <div style="margin-top: 0px">
     <h3>{{friend.name}}</h3>
@@ -46,6 +48,16 @@
 </div>
 <small id="note"></small>
 
+<div class="theme-toggle-wrapper">
+    <button id="theme-button">&#9788;</button>
+    <div id="theme-options" class="theme-options">
+        <input type="radio" id="light-theme" name="theme" value="light">
+        <label for="light-theme">Light</label><br>
+        <input type="radio" id="dark-theme" name="theme" value="dark">
+        <label for="dark-theme">Dark</label>
+    </div>
+</div>
+
 
 <script>
     var messageBody = document.querySelector('.messages');
@@ -84,5 +96,6 @@
 </script>
 
 <script src="{% static 'js/chat/chats.js' %}"></script>
+<script src="{% static 'js/theme-toggle.js' %}"></script>
 
 {% endblock %}
